@@ -2,8 +2,8 @@
 
 ## Next Steps
 
+- Make calls to the server to return pre-defined data and display it on the DOM (mimic retrieving an error) - thunk
 - Spin up a server to "store" added feedback
-- Make calls to the server to return pre-defined data and display it on the DOM (mimic retrieving an error)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
