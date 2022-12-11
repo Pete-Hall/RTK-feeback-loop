@@ -9,12 +9,14 @@ import { useSelector } from 'react-redux';
 function App() {
 
   const feeling = useSelector((state) => state.feeling.value);
+  const understanding = useSelector((state) => state.understanding.value);
 
   return (
     <div className="App">
       <header>
         <h1>Redux Toolkit Feedback Loop</h1>
         <p>Feeling: {feeling}</p>
+        <p>Understanding: {understanding}</p>
       </header>
       <Routes>
         <Route path="/" exact element={<Feeling />} />
