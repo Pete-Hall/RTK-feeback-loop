@@ -17,3 +17,5 @@ export const feelingSlice = createSlice({
 export const { updateFeeling } = feelingSlice.actions
 
 export default feelingSlice.reducer // TODO: what does the .reducer do? we import this into the store.js
+// https://medium.com/geekculture/understanding-createslice-in-redux-toolkit-reactjs-eca8d20f45d7
+// https://redux-toolkit.js.org/api/createslice

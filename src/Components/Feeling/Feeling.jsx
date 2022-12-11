@@ -8,7 +8,15 @@ export function Feeling() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const feeling = useSelector((state) => state.feeling.value);
+
   const [currentFeeling, setCurrentFeeling] = useState('0');
+
+  useEffect(() => {
+    if(feeling) {
+      setCurrentFeeling(feeling);
+    }
+  }, [feeling])
 
   const handleNext = () => {
     dispatch(updateFeeling(Number(currentFeeling)));
@@ -18,7 +26,7 @@ export function Feeling() {
   return (
     <div className="App">
       <h3>How are you feeling today?</h3>
-      <input placeholder="Feeling?" type="number" onChange={(e) => setCurrentFeeling(e.target.value)}/>
+      <input placeholder="Feeling?" type="number" onChange={(e) => setCurrentFeeling(e.target.value)} value={currentFeeling}/>
       <button onClick={handleNext}>NEXT</button>
     </div>
   );
