@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateFeeling } from "../../Redux/feelingSlice";
 
-import Counter from "../Counter/Counter";
-import { ReduxCounter } from '../ReduxCounter/ReduxCounter';
+export function Feeling() {
 
-function Feeling() {
+  const dispatch = useDispatch();
+
+  const [currentFeeling, setCurrentFeeling] = useState('0');
 
   return (
     <div className="App">
-      <p>Feeling</p>
-      <Counter />
-      <ReduxCounter />
+      <h3>How are you feeling today?</h3>
+      <input placeholder="Feeling?" type="number" onChange={(e) => setCurrentFeeling(e.target.value)}/>
+      <button onClick={() => dispatch(updateFeeling(Number(currentFeeling)))}>NEXT</button>
     </div>
   );
 }
 
-export default Feeling;
+// export default Feeling;
